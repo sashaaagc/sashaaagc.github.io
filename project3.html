@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="icon" href="logo.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Sasha'sWorkshop.com</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <script>
+        // Función para verificar si el elemento está en el viewport
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return rect.top >= 0 && rect.bottom <= window.innerHeight;
+        }
+        
+        // Función para activar las secciones cuando se hace scroll
+        function handleScroll() {
+            const projectTitle = document.querySelector('.project-title');
+            const projectImages = document.querySelectorAll('.project-image');
+        
+            // Comprobamos si el título y las imágenes están en el viewport
+            if (projectTitle && isInViewport(projectTitle)) {
+                projectTitle.classList.add('visible');
+            } else {
+                projectTitle.classList.remove('visible');
+            }
+        
+            projectImages.forEach(image => {
+                if (isInViewport(image)) {
+                    image.classList.add('visible');
+                } else {
+                    image.classList.remove('visible');
+                }
+            });
+        }
+        
+        // Ejecutar la función de scroll cada vez que se haga scroll
+        window.addEventListener('scroll', handleScroll);
+        
+        // Asegurar que las secciones sean comprobadas al cargar la página
+        window.addEventListener('load', handleScroll);
+        
+        // También comprobamos al cargar la página si las imágenes y el título están ya visibles
+        handleScroll();
+        </script>
+        
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="img/logo.png" alt="Logotipo" class="logo-img normal">
+            <a href="index.html"><img src="img/logoInvertido.png" alt="Logotipo Hover" class="logo-img hover"></a>
+        </div>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button> <!-- Botón para menú -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                   <li><a href="portfolio.html">My Work</a></li>
+                <li><a href="about.html">About</a></li>
+
+                <li><a href="contact.html" id="contact-button">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+<div class="Principal"></div>
+    
+
+    <!-- Main Content Section -->
+    <section class="project-presentation">
+        <div class="presentation-container">
+            <h1 class="project-title">RAISS</h1>
+            <h2 class="project-subtitle">Aviation Interior Design </h2>
+            <p class="project-description">
+               
+                In my third year, during my internship studing at UDIT, Universidad de Diseño, Innovación y Tecnología, a unique opportunity came up: collaborating with Iberia on a real-world challenge to improve the onboard experience on long-haul flights.
+
+That’s how R.A.I.S.S. — Restroom Autonomous In-flight Sanitising System — came to life: a full redesign of the Airbus A350 lavatory, driven by a clear goal — to make it more hygienic, inclusive, and comfortable for everyone on board.
+
+            </p>
+            <section class="project-presentation">
+
+
+
+ <div class="main-video-container">
+  <video class="project-video main" autoplay muted loop playsinline>
+    <source src="img/Iberia.mp4" type="video/mp4">
+    Tu navegador no soporta el vídeo.
+  </video>
+
+
+
+</section>
+
+      
+      
+    
+            <div class="text-container">
+                <h3 class="project-section-title">TEAM</h3>
+                <p class="project-details">Guillermo Fernandez, Mateo Magaz, Jaime Campos, Pablo Gil & Antonio A. Gonzalez  </p>
+    
+                 <h3 class="project-section-title">SOFTWARE & TOOLS</h3>
+                <p class="project-details">AUTODESK Fusion 360, AutoCAD, Rhinoceros, Arduino & Keyshot Studio </p>
+
+                <h3 class="project-section-title">RESULTS</h3>
+                <p class="project-details">
+                    Working on the prototype for this project at the University FabLAB was an amazing experience. I got to use all sorts of tools, like the 3Exes CNC, orbital sander, drills, and more, which gave me a hands-on understanding of how a design comes to life. It was really cool seeing how everything fits together and learning more about the details of assembly and finishes. It was a great way to build up my woodworking skills.
+                </p>
+                 <h3 class="project-section-title">AWARDS</h3>
+ <div class="award-item">
+  <img src="img/LogoCCA.png" alt="CCA Award" class="award-icon">
+  <div class="award-text">
+    <h4 class="award-heading">Crystal Cabin Awards - 2025</h4>
+    <p><strong>RAISS</strong> It was nominated at the 2025 Crystal Cabin Awards ceremony, held as part of the Aircraft Interiors Expo (AIX) in April 2025 in Hamburg, Germany. This event is recognized as the world’s leading platform for innovation and aircraft interior design.</p>
+  </div>
+</div>
+            </div>
+        </div>
+        <a href="contact.html" class="contact-button">Want more info? Contact me!</a>
+
+
+
+   
+    
+
+    <!-- Footer Section -->
+    <footer>
+        <p>© 2024 Sasha's Workshop - All rights reserved</p>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+
+</body>
+
+</html>
