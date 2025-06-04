@@ -1209,6 +1209,41 @@ transform: uppercase;
         font-size: 1rem; /* Reducimos el tamaño del texto */
     }
 }
+/* General container */
+.main-video-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Estilo base para video */
+.project-video.main,
+.project-image.main {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 2px;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+  min-height: 250px;
+}
+
+
+
+
+
+
+
+
+
+/* En pantallas móviles */
+@media (max-width: 600px) {
+  body {
+    overflow-x: hidden; /* Evita scroll horizontal */
+  }
 
   .main-video-container {
     width: 100%;
@@ -1224,6 +1259,7 @@ transform: uppercase;
     margin: 0 auto;
   }
 }
+
 
 
 
