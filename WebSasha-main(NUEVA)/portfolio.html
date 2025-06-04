@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+        <link rel="icon" href="logo.png" type="image/png">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Sasha´sWorkshop.com</title>
+<link rel="stylesheet" href="css/styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="img/logo.png" alt="Logotipo" class="logo-img normal">
+            <a href="index.html"><img src="img/logoInvertido.png" alt="Logotipo Hover" class="logo-img hover"></a>
+
+
+           
+           
+        </div>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button> <!-- Botón para menú -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">My Work</a></li>
+
+                <li><a href="about.html">About</a></li>
+
+                <li><a href="contact.html" id="contact-button">Contact</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+
+    <section class="projects">
+       
+        <div class="projects">
+            <div class="projects-container">
+                <div class="project-card" onclick="window.location.href='project3.html';">
+                    <img src="img/Iberia1.jpg" alt="Proyecto 1">
+                    <div class="project-title-container">
+                        <h3>01_RAISS</h3>
+                    </div>
+                </div>
+        
+                <div class="project-card" onclick="window.location.href='project2.html';">
+                    <img src="img/relojMain.jpg" alt="Proyecto 2">
+                    <div class="project-title-container">
+                        <h3>02_Horus</h3>
+                    </div>
+                </div>
+        
+                <div class="project-card" onclick="window.location.href='project1.html';">
+                    <img src="img/ZenithMain.jpg" alt="Proyecto 3">
+                    <div class="project-title-container">
+                        <h3>03_Zenith</h3>
+                    </div>
+                   
+                </div>
+
+      
+
+                 <div class="project-card" onclick="window.location.href='';">
+                    <img src="img/desktop-computer-motherboard-vap6u6p2m8069kr8.jpg" alt="Proximamente">
+                    <div class="project-title-container">
+                        <h3>04_TFG</h3>
+                          <h3>In Progress...</h3>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+        
+
+    <footer>
+        <p>© 2024 Sasha`s Workshop - All rights reserved</p>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,1377 @@
+/* Estilos globales */
+* {
+    margin: 0;
+    padding: 0;
+    
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+}
+html, body {
+    overflow-x: hidden; /* Desactiva el desplazamiento horizontal */
+    margin: 0;           /* Elimina márgenes que podrían generar desbordamiento */
+    padding: 0;          /* Elimina el padding global */
+    width: 100%;         /* Asegura que el body ocupe solo el 100% del ancho de la pantalla */
+}
+
+* {
+    box-sizing: border-box; /* Asegura que los márgenes y bordes no hagan que los elementos se desborden */
+}
+
+img {
+    max-width: 100%; /* Las imágenes se ajustarán al contenedor */
+    height: auto;    /* Mantiene la proporción de la imagen */
+}
+
+body {
+    overflow-x: hidden; /* Asegura que no haya desplazamiento horizontal en el cuerpo */
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #1c1c1c, #282828);
+    color: #fff;
+    line-height: 1.6;
+}
+
+.hero {
+  
+    background-color: #000000;
+    position: relative; /* Posición relativa para el posicionamiento absoluto de la imagen */
+    height: 100vh; /* Altura fija para la sección hero */
+    display: flex;
+    flex-direction: column;
+    
+    align-items: left;
+    text-align: left;
+    padding: 50px; /* Ajusta el padding según sea necesario */
+    overflow: hidden; /* Oculta el contenido que se desborda */
+}
+
+
+
+
+/* Estilo base del header */
+header {
+    background-color: black;
+    margin: 0;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo */
+.logo {
+    width: 60px; /* Tamaño ajustable */
+    height: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.logo-img {
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+    transition: opacity 0.5s ease;
+}
+
+.hover {
+    opacity: 0;
+}
+
+.logo:hover .normal {
+    opacity: 0;
+}
+
+.logo:hover .hover {
+    opacity: 1;
+}
+
+/* Navegación */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 15px; /* Espaciado entre los elementos */
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #046865;
+    font-weight: bold;
+    text-shadow: 0 0 10px #046865;
+}
+
+.menu-toggle {
+    display: none; /* Oculta el botón por defecto */
+}
+
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    nav ul {
+        display: flex; /* Muestra el menú en el fondo */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: black;
+        width: 100%; /* Ocupa todo el ancho del dispositivo */
+        padding: 10px 0;
+        text-align: center;
+        opacity: 0; /* El menú está oculto por defecto */
+        visibility: hidden; /* Asegura que no se pueda interactuar */
+        transition: opacity 0.5s ease, visibility 0s linear 0.5s; /* Efecto de desvanecimiento */
+    }
+
+    nav ul.show {
+        opacity: 1; /* El menú será visible */
+        visibility: visible; /* Habilita la interacción */
+        transition: opacity 0.5s ease, visibility 0s; /* Efecto de aparición */
+    }
+
+    nav ul li a {
+        padding: 10px 0; /* Más espacio entre elementos */
+    }
+
+    .menu-toggle {
+        display: block;
+        color: #fff;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        margin-left: auto;
+        transition: color 0.5s ease; /* Transición en el color durante 0.5 segundos */
+    }
+    
+    .menu-toggle:hover {
+        color: #046865; /* Nuevo color cuando se hace hover */
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        margin-left: auto;
+    }
+    /* Estilos base del menú (oculto por defecto) */
+nav ul {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.95);
+  color: white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 999;
+}
+
+/* Cuando el menú se muestra */
+nav ul.show {
+  display: flex;
+}
+
+nav ul li {
+  margin: 20px 0;
+}
+
+nav ul li a {
+  color: white;
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+/* Estilos del botón (ya los tienes, pero aquí los junto) */
+.menu-toggle {
+  display: block;
+  color: #fff;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-left: auto;
+  transition: color 0.5s ease;
+  position: relative;
+  z-index: 1000; /* Para que esté por encima del menú */
+}
+
+.menu-toggle:hover {
+  color: #046865;
+}
+
+    
+}
+
+@media (max-width: 480px) {
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    nav ul li a {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+/* HOME PAGE  */
+.hero {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 5; /* Asegura que la hero no se sobreponga */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    text-align: left;
+}
+
+.portfolio-title { 
+    font-size: clamp(2rem, 10vw, 15rem);
+ 
+  text-align: center;
+  
+  
+     font-weight: lighter;  
+     white-space: nowrap;
+     top: 77%; /* Centra verticalmente */
+    left: 50%; /* Centra horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta el texto para estar perfectamente centrado */
+}
+.portfolio-title {
+    
+}
+
+@media (max-width: 768) {
+    .portfolio-title {
+        font-size: 3rem; /* Fija un tamaño más pequeño para móviles */
+    }
+}
+
+
+
+.parrafo1homepage {
+    text-align: center;
+    font-weight: lighter;
+    font-size: 14px;
+    width: 90%; /* Usa un porcentaje para adaptarlo al ancho del dispositivo */
+    max-width: 400px; /* Asegura que no crezca demasiado en pantallas grandes */
+    position: absolute;
+    top: 75%; /* Mantiene el texto centrado verticalmente */
+    left: 50%; /* Centra horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta el texto para estar perfectamente centrado */
+    line-height: 1.5; /* Mejora la legibilidad */
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .parrafo1homepage {
+        font-size: 12px; /* Reduce el tamaño de la fuente en dispositivos más pequeños */
+        width: 80%; /* Reduce el ancho para evitar desbordamientos */
+    }
+}
+
+@media (max-width: 480px) {
+    .parrafo1homepage {
+        font-size: 10px; /* Fuente más pequeña en teléfonos */
+        width: 90%; /* Aumenta ligeramente el ancho */
+    }
+}
+
+
+.textoanimado {
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid;
+    display: inline-block;
+    animation: blink-cursor 0.7s steps(1) infinite;
+    position: absolute; /* Cambiamos para centrar */
+    top: 66%; /* Centra verticalmente */
+    left: 50%; /* Centra horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta el texto para estar perfectamente centrado */
+}
+
+@keyframes blink-cursor {
+    50% {
+        border-right-color: transparent;
+    }
+}
+
+
+/* Animación de aparición */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Mueve el elemento ligeramente hacia abajo */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Clase para aplicar el efecto */
+.fade-in {
+    opacity: 0; /* Ocultar el elemento inicialmente */
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+
+
+.sasha-workshop-title {
+
+      
+    }
+.sasha-workshop-title::after {
+    position: absolute; /* Cambia la posición a absoluta */
+    top: 55%; /* Ajusta la distancia desde el borde superior */
+    left: 50%; /* Ajusta la distancia desde el borde izquierdo */
+    transform: translate(-50%, -50%); /* Centra el botón en la ventana */
+
+  text-align: center;
+    font-size: 300%;
+    margin-bottom: 1rem;
+     font-weight: bold;  
+     white-space: nowrap;
+    
+        content: ""; /* Cursor estilo terminal */
+        display: inline-block;
+        animation: blink 0.5s step-start infinite;
+        font-weight: light;
+      
+    }
+
+
+
+
+    
+
+    .btn1 {
+        width: 280px;
+        height: 50px;
+        font-weight: 300; /* Usar un valor numérico adecuado */
+        background-color: #000000;
+        color: #fff;
+        border: none;
+        border-radius: 40px;
+        font-size: 1rem;
+        list-style: none;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 5px  #046865, 0 0 0px #046865, 0 0 30px #046865;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 90%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 10px 20px;
+    }
+    
+    .btn:hover {
+        background-color: #000000;
+        box-shadow: 0 0 5px #046865, 0 0 6px #046865, 0 0 6px #046865;
+        font-weight: bold;
+        transition: all 0.2s ease; /* Asegurarse de que la transición coincida con la de .btn */
+    }
+    .btn1:hover {
+        background-color: #000000;
+        box-shadow: 0 0 5px #046865, 0 0 6px #046865, 0 0 6px #046865;
+        font-weight: bold;
+        transition: all 0.2s ease; /* Asegurarse de que la transición coincida con la de .btn */
+    }
+    
+
+    
+
+
+
+
+/* Galería de Proyectos */
+.gallery-carousel {
+    
+    width: 100%;
+    height: ;
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery-slide {
+    border: none;
+    display: flex;
+    transition: transform 0.5s ease;
+    height: 100%;
+}
+
+.gallery-slide a {
+    width: 100%; /* Asegura que cada imagen ocupe el 100% del contenedor */
+    height: 100%;
+    flex-shrink: 0;
+}
+
+.gallery-slide img {
+    width: 100%;
+
+    object-fit: cover; /* Ajusta las imágenes sin distorsión */
+    
+}
+
+/* Botones de navegación para el carrusel (opcional) */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    z-index: 10;
+}
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
+.prev:hover{
+    color: #046865;
+
+}
+.prev:active{
+    color: #0e2827;
+
+}
+.next:hover{
+    color: #046865;
+
+}
+.next:active{
+    color: #0e2827;
+
+}
+
+
+/* ABOUT */
+.about-me {
+    min-height: 400px; /* Altura mínima para todas las pantallas */
+    display: flex; /* Usamos Flexbox para la disposición horizontal */
+    justify-content: space-between; /* Separa los elementos con espacio entre ellos */
+    align-items: center; /* Alinea verticalmente al centro */
+
+    background: #000000; /* Fondo oscuro */
+    color: #b03636; /* Color de texto blanco */
+    height: auto; /* Permite que crezca con el contenido */
+}
+
+
+/* Contenedor de texto */
+.about-text {
+    font-size: clamp(1rem, 3vw, 1.4rem); /* Texto adaptativo */
+    padding-left: 20px;
+    flex: 1; /* El texto ocupa el espacio disponible */
+    padding-right: 20px; /* Espacio entre el texto y la imagen */
+}
+
+/* General */
+.about-text h2 {
+    font-size: clamp(2rem, 5vw, 3.5rem); /* Mínimo 2rem, máximo 3.5rem, adaptable con vw */
+    margin-bottom: 20px;
+    color: #046865;
+}
+
+.about-text h3 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem); /* Ajustable con un rango dinámico */
+    margin-bottom: 20px;
+    color: #6c6b6b;
+    font-weight: lighter;
+}
+.about-text h4 {
+    font-size: clamp(0.5rem, 4vw, 1rem); /* Ajustable con un rango dinámico */
+    margin-bottom: 20px;
+    color: #8b8b8b;
+    font-weight: lighter;}
+
+  /*CONTACTO - Dirección */  
+h4{
+  
+    align-items: center;
+    font-size: 1rem;
+    margin-bottom: 20px;
+ 
+    color: #ffffff;
+    font-weight: lighter;
+    width: 120%;
+}
+
+.about-text p {
+    text-align: justify;
+    font-size: clamp(1rem, 2vw, 1.2rem); 
+    line-height: 1.6;
+    font-weight: lighter;
+    color: rgb(193, 193, 193)
+    
+}
+
+.image-container img {
+    width: clamp(200px, 50%, 600px); /* Tamaño mínimo, adaptable y máximo */
+    opacity: 0; /* Inicialmente invisible */
+    transform: translateY(50px); /* Desplazado hacia abajo */
+    transition: opacity 1s, transform 1s; /* Transición suave */
+    width: 100%; /* Hace que la imagen ocupe todo el contenedor */
+    max-width: 400px; /* Tamaño máximo de la imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra en la imagen */
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+    .about-me {
+        flex-direction: column;
+        justify-content: center; /* Centra verticalmente */
+        align-items: center; /* Centra horizontalmente */
+        text-align: center;
+        height: auto; /* Deja que se ajuste dinámicamente */
+        min-height: 100vh; /* Asegura que ocupe al menos toda la pantalla */
+        padding-top: 10%;
+        padding-bottom: 10%;
+    }
+
+    .about-text {
+        width: 90%; /* Más ancho en pantallas pequeñas */
+        margin: 0;
+    }
+
+    .image-container {
+        margin-top: 20px;
+        width: clamp(150px, 80%, 400px); /* Tamaño adaptable más pequeño */
+    }
+
+    .image-container img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+
+
+
+/* Inicialmente, el texto y las imágenes están ocultos */
+.about-text, .image-container img {
+    opacity: 0; /* Inicialmente invisible */
+    transform: translateY(50px); /* Desplazado hacia abajo */
+    transition: opacity 3s, transform 1s; /* Transición suave */
+}
+
+/* Animación de visibilidad cuando los elementos tienen la clase "visible" */
+.about-text.visible, .image-container img.visible {
+    opacity: 1; /* Hace que el texto y la imagen sean visibles */
+    transform: translateY(0); /* Vuelve a la posición original */
+}
+/* Añadir un fondo diferente a la nueva sección */
+.about-me:nth-child(2) {
+    background: #222222; /* Fondo ligeramente diferente para la sección "Experiences" */
+}
+
+/* Modificar ligeramente la sombra de la imagen en la nueva sección */
+.about-me:nth-child(2) .image-container img {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6); /* Más sombra para la sección "Experiences" */
+}
+
+/* Ajustar el texto de la nueva sección si es necesario */
+.about-me:nth-child(2) .about-text h2 {
+    color: #f2a900; /* Cambiar color del texto para hacerlo destacar */
+}
+
+
+/* Animación de visibilidad cuando los elementos tienen la clase "visible" */
+.experiences-text.visible, .image-container img.visible {
+    opacity: 1; /* Hace que el texto y la imagen sean visibles */
+    transform: translateY(0); /* Vuelve a la posición original */
+}
+
+
+
+
+/* Animación de máquina de escribir */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%; /* Aumenta el ancho para mostrar todo el texto */
+    }
+}
+
+/* Animación del cursor de la máquina de escribir */
+@keyframes blink {
+    50% {
+        border-color: transparent; /* Hace que el cursor se vuelva transparente */
+    }
+}
+
+
+
+
+
+
+
+
+
+.contact-section{
+    margin-top: -10px;
+    padding: 0;
+    display: flex; /* Usamos Flexbox para la disposición horizontal */
+    justify-content: space-between; /* Separa los elementos con espacio entre ellos */
+    align-items: center; /* Alinea verticalmente al centro */
+    padding: 50px 20px; /* Espaciado */
+    background: #000000;
+   
+}
+
+
+
+
+
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .contact-item {
+    display: flex;
+    align-items: center; /* Alinea el ícono y el texto */
+  }
+  
+  .contact-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* Elimina subrayado del enlace */
+    color: #fff; /* Color de texto blanco */
+    font-size: 1.2rem; /* Tamaño del texto */
+  }
+  
+  .contact-icon {
+    width: 24px; /* Tamaño de los íconos */
+    height: 24px; /* Asegura que los íconos sean de 24x24 píxeles */
+    margin-right: 10px; /* Espacio entre el ícono y el texto */
+  }
+  
+  .contact-link:hover {
+    color: #046865; /* Color del texto al pasar el mouse */
+  }
+  
+  .contact-link:active {
+    color: #f2a900; /* Color de texto al hacer clic */
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* PROYECTOS  */
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+/* Animación para elementos deslizándose */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+
+/* Media Queries para pantallas grandes */
+@media (min-width: 1024px) {
+    .presentation-container {
+        grid-template-areas: 
+            "title title"
+            "subtitle subtitle"
+            "image description"
+            "details details"
+            "results results";
+    }
+}
+
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 768px) {
+    .presentation-container {
+        grid-template-areas: 
+            "title"
+            "subtitle"
+            "image"
+            "description"
+            "details"
+            "results";
+        grid-template-columns: 1fr; /* Una sola columna */
+    }
+
+    .project-title,
+    .project-subtitle,
+    .project-description,
+    .project-details,
+    .project-results {
+        grid-column: span 1;
+    }
+
+    .project-image {
+        grid-column: span 1;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.image-boxes {
+    display: flex;
+    justify-content: space-between; /* Mantén space-between para que haya espacio entre las imágenes */
+    margin-bottom: 40px; /* Espacio entre las imágenes laterales y el texto */
+    padding-top: -3px;
+    width: 100%; /* Asegúrate de que el contenedor ocupe todo el ancho disponible */
+}
+
+.image-box {
+    flex-grow: 1; /* Permite que las imágenes crezcan proporcionalmente */
+    margin: 0 4px; /* Ajusta este valor para controlar el espacio entre las imágenes */
+}
+
+.image-box img {
+    width: 100%;
+    height: auto;
+    opacity: 0; /* Inicialmente invisible */
+   
+    transition: opacity 3s, transform 1s; /* Transición suave */
+    display: block; /* Para evitar el espacio extra debajo de la imagen */
+}
+
+
+
+
+
+
+
+
+
+
+
+.Principal{
+    width: 100%;
+    height: 120px;
+    background-color: #000000;
+}
+
+
+
+
+.cajanegra{
+    width: 100%;
+    height: 250px;
+    background-color: #000000;
+}
+
+.cajanegra1{
+    width: 100%;
+    height: 100px;
+    background-color: #000000;
+  
+}
+.cajanegra2{
+    width: 100%;
+    height: 50px;
+    background-color: #000000;
+  
+}
+.cajanegra3 {
+    width: 100%;
+    height: 40vh; /* Ajusta la altura a un 50% del tamaño de la pantalla */
+    background-color: #000000;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilos TEXTOS PROYECTOS 1 2 y 3 */
+
+
+.project-presentation {
+    overflow-y: hidden;
+    padding-top: 80px;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: center;
+    background: black;
+   
+   
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px); /* Desenfoque sutil de fondo */
+}
+
+.presentation-container {
+    max-width: 1400px;
+    margin: 0 auto;
+  
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+    height: 100%
+}
+
+/* Título del proyecto */
+.project-title {
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 25px;
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    animation: fadeInUp 1s ease-in-out;
+}
+
+
+
+/* Subtítulo del proyecto */
+.project-subtitle {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 30px;
+    color: #bbb;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.8;
+}
+
+/* Contenedor general de la presentación */
+.presentation-container {
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Descripción del proyecto */
+.project-description {
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    color: #d1d1d1;
+    text-align: center;
+    opacity: 0.9;
+}
+
+/* Contenedor flexible para la imagen y el texto */
+/* Contenedor de la imagen y el texto */
+/* Contenedor de la imagen */
+/* Contenedor de la imagen */
+.image-and-text {
+   width: 1050px;
+   
+    align-items: center;
+    gap: 2px;
+    margin-top: 20px;
+    position: relative;
+}
+
+/* Imagen del proyecto */
+.project-image {
+    width: 1050px;
+    height: auto;
+    transition: transform 0.7s ease, opacity 0.7s ease;
+    position: relative;
+ 
+    
+    /* Establecemos el origen de la transformación al centro de la imagen */
+    transform-origin: center center;
+}
+
+/* Para la transición de reducción */
+.project-image.shrink {
+    transform: scale(0.8); /* Reducción suave */
+    opacity: 1; /* Mantén la opacidad al 100% */
+}
+
+/* Si quieres que la imagen se mueva a un lugar más específico */
+.project-image.shrink-on-scroll {
+    transform: scale(0.8) translateX(-10%); /* Agrega un pequeño desplazamiento si lo necesitas */
+}
+
+
+/* Contenedor del texto */
+.text-container {
+  margin-top: -30px;
+    max-width: 480%; /* El texto ocupa el 48% del ancho del contenedor */
+    color: #e0e0e0;
+    text-align: center;
+}
+
+/* Títulos de las secciones */
+
+
+.project-image main {
+    opacity: 0; /* Inicialmente invisible */
+   
+    transition: opacity 0.7s, transform 2.7s; /* Transición suave */
+
+
+transform: uppercase;
+}
+.project-image {
+    opacity: 0; /* Inicialmente invisible */
+    
+    transition: opacity 0.7s, transform 2.7s; /* Transición suave */
+
+
+transform: uppercase;
+}
+
+.project-title.visible,
+.project-image.visible {
+    opacity: 1;
+    
+}
+
+        
+
+
+.project-title {
+    opacity: 0; /* Inicialmente invisible */
+    transform: translateY(50px); /* Desplazado hacia abajo */
+    transition: opacity 3s, transform 1s; /* Transición suave */
+}
+
+/* Animación de visibilidad cuando los elementos tienen la clase "visible" */
+.project-title.visible {
+    opacity: 1; /* Hace que el texto y la imagen sean visibles */
+    transform: translateY(0); /* Vuelve a la posición original */
+}
+
+
+/* Define la animación */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Aplica la animación al cargar */
+.projects {
+    padding-top: 40px;
+    width: 100%;
+    padding: 40px 0;
+    text-align: center;
+    background-color: #000000;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.projects-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+/* Contenedor de los proyectos */
+.projects-container {
+    display: flex;
+    justify-content: center;
+    gap: 1px;
+    flex-wrap: wrap;
+}
+
+/* Caja de cada proyecto */
+.project-card {
+    width: 350px;
+    height: 90vh;
+    background-color: #000000;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 20px; /* Separación entre tarjetas */
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
+}
+
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover img {
+    opacity: 0.4;
+}
+
+.project-card .project-title-container {
+    position: absolute;
+    bottom: 300px;
+    left: 10px;
+    right: 10px;
+    padding: 10px;
+    font-size: 1.5rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.project-card:hover .project-title-container {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Media Queries para dispositivos más pequeños */
+
+/* Para tabletas */
+@media (max-width: 1024px) {
+    .project-card {
+        width: 45%; /* Ajustamos el tamaño de las tarjetas para que sean más pequeñas */
+        height: auto;
+    }
+
+    .project-card img {
+        height: 250px; /* Ajustamos la altura de la imagen */
+    }
+
+    .project-title-container {
+        bottom: 200px; /* Ajustamos la posición del título */
+        font-size: 1.3rem; /* Reducimos el tamaño del texto */
+    }
+}
+
+/* Para dispositivos móviles */
+@media (max-width: 768px) {
+    .projects-container {
+        justify-content: center;
+        gap: 10px; /* Reducimos el espacio entre las tarjetas */
+    }
+
+    .project-card {
+        width: 90%; /* Hacemos las tarjetas más anchas */
+        height: auto;
+    }
+
+    .project-card img {
+        height: 200px; /* Reducimos la altura de la imagen */
+    }
+
+    .project-title-container {
+        bottom: 150px; /* Ajustamos la posición del título */
+        font-size: 1.2rem; /* Reducimos el tamaño del texto */
+    }
+}
+
+/* Para móviles muy pequeños */
+@media (max-width: 480px) {
+    .project-card {
+        width: 100%; /* Las tarjetas ocuparán todo el ancho */
+        height: auto;
+    }
+
+    .project-card img {
+        height: 180px; /* Ajustamos aún más la altura de la imagen */
+    }
+
+    .project-title-container {
+        bottom: 100px; /* Ajustamos la posición del título */
+        font-size: 1rem; /* Reducimos el tamaño del texto */
+    }
+}
+.project-video.main,
+.project-image.main {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 2px;
+}
+
+
+
+/* Contenedor principal de texto */
+.text-container {
+  background-color: #000;
+  color: #eee;
+  font-family: 'Montserrat', sans-serif;
+  padding: 2rem 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+/* Títulos de secciones principales */
+.project-section-title {
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #fff;
+  margin-bottom: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  border-bottom: 2px solid #555;
+  padding-bottom: 0.4rem;
+  text-align: ;
+}
+
+/* Párrafos descriptivos */
+.project-details,
+.project-results {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 1.6rem;
+}
+
+/* Contenedor para premios */
+.award-item {
+  display: grid;
+  grid-template-columns: 70px 1fr; /* icono y texto */
+  align-items: start;
+  gap: 1.2rem;
+  margin-top: 1.2rem;
+}
+
+/* Imagen del premio */
+/* Imagen del premio */
+.award-icon {
+  width: 70px; /* un poco más grande */
+  height: auto;
+  flex-shrink: 0;
+  object-fit: contain;
+  filter: brightness(1.1);
+  align-self: flex-start;
+  margin-top: 0.7rem; /* baja ligeramente el icono */
+}
+
+
+/* Texto del premio */
+.award-text {
+  flex: 1;
+  min-width: 0; /* permite al texto ajustarse correctamente */
+  text-align: left;
+  color: #ddd;
+  margin: 0;
+}
+
+/* Título dentro del premio */
+ .award-heading {
+  margin: 0 0 0.3rem 0;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #f0f0f0;
+  
+}
+
+/* Párrafo dentro del premio */
+.award-text p {
+  margin: 0;
+  font-weight: 400;
+  font-size: 0.95rem;
+  color: #bbb;
+  line-height: 1.4;
+}
+
+.award-text strong {
+  color: #fff;
+  font-weight: 700;
+}
+
+.award-text em {
+  font-style: italic;
+  color: #999;
+}
+
+/* Responsive: solo ajusta tamaños, no estructura */
+@media (max-width: 600px) {
+  .award-icon {
+    width: 48px;
+  }
+  .award-heading {
+    font-size: 1.05rem;
+  }
+  .award-text p {
+    font-size: 0.9rem;
+  }
+}
+
+.contact-button {
+  width: 270px;
+  height: 45px;
+  font-weight: 300;
+  background-color: #000000;
+  color: #fff;
+  border: none;
+  border-radius: 40px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 5px #046865, 0 0 0px #046865, 0 0 30px #046865;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  margin: 0 auto 2rem auto; /* Esto centra horizontalmente */
+}
+
+
+.contact-button:hover {
+  background-color: #000000;
+  box-shadow: 0 0 5px #046865, 0 0 6px #046865, 0 0 6px #046865;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+
+
+
+
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #000000;  
+    width: 100%;
+    bottom: 0;
+}
+
+
+    
+    
+    .btn1:hover {
+       
+    }
